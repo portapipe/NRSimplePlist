@@ -3,6 +3,12 @@ NRSimplePlist
 
 ###Semplice libreria per recuperare dati da file plist e modificarli al volo (XCode)
 
+
+---
+
+## Utilizzo
+
+
 Recupera i valori con:
 <pre>
 <code>
@@ -36,7 +42,11 @@ Modifica i valori, a seconda del tipo, con:
 	 +(void)modificaDictionaryPlist:(NSString *)nomeFile conChiave:(NSString*)chiave eDictionary:(NSDictionary*)dictionary;
 </code>
 </pre>
-Esempio? Estraiamo il nome della musica di sottofondo dal file 'settaggi.plist' presente nel progetto:
+
+---
+## Esempio
+
+Estraiamo il nome della musica di sottofondo dal file 'settaggi.plist' presente nel progetto:
 
 	 NSString *stringaDaPlist = [NRSimplePlist valorePlist:@"settaggi" conChiave:@"musicaSottofondo"];
 
