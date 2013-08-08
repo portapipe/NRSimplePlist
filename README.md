@@ -35,13 +35,13 @@ edit values, depending of his type, with:
 	 +(void)editDataPlist:(NSString *)plistName withKey:(NSString*)key andData:(NSData*)data;
 
  //Date
-	 +(void)editDatePlist:(NSString *)nomeFile withKey:(NSString*)key andDate:(NSDate*)date;
+	 +(void)editDatePlist:(NSString *)plistName withKey:(NSString*)key andDate:(NSDate*)date;
 
  //Array
-	 +(void)editArrayPlist:(NSString *)nomeFile withKey:(NSString*)key andArray:(NSArray*)array;
+	 +(void)editArrayPlist:(NSString *)plistName withKey:(NSString*)key andArray:(NSArray*)array;
 
  //Dictionary
-	 +(void)editDictionaryPlist:(NSString *)nomeFile withKey:(NSString*)key andDictionary:(NSDictionary*)dictionary;
+	 +(void)editDictionaryPlist:(NSString *)plistName withKey:(NSString*)key andDictionary:(NSDictionary*)dictionary;
 </code>
 </pre>
 
