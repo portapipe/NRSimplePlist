@@ -1,6 +1,74 @@
 NRSimplePlist
 =============
+ENGLISH
+=============
 
+###Easy library to fetch, add and edit data from and to plists on the fly (XCode)
+
+
+---
+
+## Usage
+
+
+Fetch values:
+<pre>
+<code>
+ + (id)plistValue:(NSString *)plistName withKey:(NSString*)key;
+</code>
+</pre>
+
+
+Modifica i valori, a seconda del tipo, con:
+<pre>
+<code>
+ //Stringa
+    +(void)editStringPlist:(NSString *)plistName withKey:(NSString*)key andString:(NSString*)string;
+
+ //Numero
+	 +(void)editNumberPlist:(NSString *)plistName withKey:(NSString*)key andNumber:(NSNumber*)number;
+
+ //Bool
+	 +(void)modificaBoolPlist:(NSString *)nomeFile conChiave:(NSString*)chiave eBool:(BOOL)valoreBooleano;
+
+ //Data
+	 +(void)modificaDataPlist:(NSString *)nomeFile conChiave:(NSString*)chiave eData:(NSData*)data;
+
+ //Date
+	 +(void)modificaDatePlist:(NSString *)nomeFile conChiave:(NSString*)chiave eDate:(NSDate*)date;
+
+ //Array
+	 +(void)modificaArrayPlist:(NSString *)nomeFile conChiave:(NSString*)chiave eArray:(NSArray*)array;
+
+ //Dictionary
+	 +(void)modificaDictionaryPlist:(NSString *)nomeFile conChiave:(NSString*)chiave eDictionary:(NSDictionary*)dictionary;
+</code>
+</pre>
+
+---
+## Esempio
+
+Estraiamo il nome della musica di sottofondo dal file 'settaggi.plist' presente nel progetto:
+
+	 NSString *stringaDaPlist = [NRSimplePlist valorePlist:@"settaggi" conChiave:@"musicaSottofondo"];
+
+
+Modifichiamo ora la musica di sottofondo, salvando subito il cambiamento:
+
+	[NRSimplePlist modificaStringaPlist:@"settaggi" conChiave:@"musicaSottofondo" eStringa:@"sottofondo2.mp3"];
+
+
+Semplice no?
+Provaci anche tu!
+
+
+N.B. Se devi passare dati sensibili NON USARE LE PLIST ma utilizza CoreData o i database MySQL o MySQLi!
+
+
+
+
+ITALIANO
+=============
 ###Semplice libreria per recuperare dati da file plist e modificarli al volo (XCode)
 
 
