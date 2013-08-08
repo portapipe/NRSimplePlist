@@ -19,7 +19,7 @@ Fetch values:
 </pre>
 
 
-edit i valori, a seconda del tipo, con:
+edit values, depending of his type, with:
 <pre>
 <code>
  //String
