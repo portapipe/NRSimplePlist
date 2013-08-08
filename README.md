@@ -55,7 +55,7 @@ Fetching the name of background music from the 'settings.plist' file into the pr
 
 Editing the background music, saving the changes on the fly:
 
-	[NRSimplePlist editStringPlist:@"settings" withKey:@"backgroundMusic" andStringa:@"bgMusic2.mp3"];
+	[NRSimplePlist editStringPlist:@"settings" withKey:@"backgroundMusic" andString:@"bgMusic2.mp3"];
 
 
 Easy, right?
