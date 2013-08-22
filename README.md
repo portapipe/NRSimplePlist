@@ -1,5 +1,7 @@
 NRSimplePlist
 =============
+<pre>pod 'NRSimplePlist'</pre>
+
 ENGLISH
 =============
 
