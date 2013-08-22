@@ -1,5 +1,7 @@
 NRSimplePlist
 =============
+
+COCOAPODS
 <pre>pod 'NRSimplePlist'</pre>
 
 ENGLISH
