@@ -14,7 +14,36 @@ ENGLISH
 
 ## Usage
 
+### Swift
+Get values (return NSString):
+<pre>
+<code>
+ plistGet(key:String, forPlistNamed:String) -> NSString
+</code>
+</pre>
 
+Set value for key:
+<pre>
+<code>
+ plistSet(newValue:String, forKey:String, inPlistNamed:String)
+</code>
+</pre>
+---
+## Example - Swift Version
+
+Fetching the name of background music from the 'settings.plist' file into the project:
+
+	var stringFromPlist : NSString = plistGet("settings", "backgroundMusic")
+
+
+Editing the background music, saving the changes on the fly:
+
+	//You can put this into a viewDidLoad method, a generic method, a class or where you need it!
+	plistSet("bgMusic2.mp3", "backgroundMusic", "settings")
+	//Set new value "bgMusic2.mp3" for key "backgroundMusic" in Plist named "settings"
+
+---
+### Objective-C
 Fetch values:
 <pre>
 <code>
