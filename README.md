@@ -14,7 +14,7 @@ ENGLISH
 
 ## Usage
 
-### Swift
+### Swift Version
 Get values (return NSString):
 <pre>
 <code>
@@ -29,7 +29,7 @@ Set value for key:
 </code>
 </pre>
 ---
-## Example - Swift Version
+### Example - Swift Version
 
 Fetching the name of background music from the 'settings.plist' file into the project:
 
@@ -43,7 +43,7 @@ Editing the background music, saving the changes on the fly:
 	//Set new value "bgMusic2.mp3" for key "backgroundMusic" in Plist named "settings"
 
 ---
-### Objective-C
+### Objective-C Version
 Fetch values:
 <pre>
 <code>
@@ -79,7 +79,7 @@ edit values, depending of his type, with:
 </pre>
 
 ---
-## Example
+## Examples - Objective-C Version
 
 Fetching the name of background music from the 'settings.plist' file into the project:
 
@@ -109,7 +109,35 @@ ITALIANO
 ---
 
 ## Utilizzo
+### Versione Swift (solo in inglese per praticità)
+Ritorna il valore passando una chiave (ritorna NSString):
+<pre>
+<code>
+ plistGet(key:String, forPlistNamed:String) -> NSString
+</code>
+</pre>
 
+Setta un valore nel file per la chiave passata:
+<pre>
+<code>
+ plistSet(newValue:String, forKey:String, inPlistNamed:String)
+</code>
+</pre>
+---
+### Esempio - Versione Swift
+
+Estraiamo il nome della musica di sottofondo dal file 'settaggi.plist' presente nel progetto:
+
+	var stringFromPlist : NSString = plistGet("settings", "backgroundMusic")
+
+
+Modifichiamo ora la musica di sottofondo, salvando subito il cambiamento:
+
+	plistSet("bgMusic2.mp3", "backgroundMusic", "settings")
+	//Setta nuovo valore "bgMusic2.mp3" per la chiave "backgroundMusic" nel file Plist "settings"
+
+---
+### Versione Objective-C
 
 Recupera i valori con:
 <pre>
@@ -146,7 +174,7 @@ Modifica i valori, a seconda del tipo, con:
 </pre>
 
 ---
-## Esempio
+## Esempio - Versione Objective-C
 
 Estraiamo il nome della musica di sottofondo dal file 'settaggi.plist' presente nel progetto:
 
