@@ -1,5 +1,5 @@
 //
-//  NRSwiftPlist.swift
+//  NRswiftPlist.swift
 //
 //  Created by Norman Russo on 04/11/14.
 //  Copyright (c) 2014 Norman Russo. All rights reserved.
@@ -28,7 +28,7 @@ func plistGet(key:String, forPlistNamed:String) -> NSString{
                 NSLog("NRSimplePlist - Error READING plist file '\(path)', error = '\(error)'")
             }
             
-            tipo = plist.valueForKey(key) as String // ojectForKey(key) as NSString
+            tipo = plist.valueForKey(key) as String
             
             return tipo
             
@@ -70,7 +70,7 @@ func plistSet(newValue:String, forKey:String, inPlistNamed:String){
                 array = plist.mutableCopy() as NSMutableDictionary
 
                 array.setObject(newValue, forKey: forKey)
-                
+                array.writeToFile(path, atomically: true)
             }
             
         } else {
