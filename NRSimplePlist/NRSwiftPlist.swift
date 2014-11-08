@@ -17,7 +17,6 @@ func plistGet(key:String, forPlistNamed:String) -> NSString{
     
     
     if let path:String = NSBundle.mainBundle().pathForResource(forPlistNamed, ofType: "plist"){
-        println(path)
         
         if let plistData = NSData(contentsOfFile: path) {
             
