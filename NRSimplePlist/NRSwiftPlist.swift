@@ -7,13 +7,13 @@
 
 import UIKit
 
-func plistGet(key:String, forPlistNamed:String) -> NSString{
+func plistGet(key:String, forPlistNamed:String) -> AnyObject{
     
     var error:NSError?
     var formats: UnsafeMutablePointer<NSPropertyListFormat> = UnsafeMutablePointer()
     
     var array:NSArray = NSArray()
-    var tipo:String = ""
+    var tipo:AnyObject = ""
     
     
     if let path:String = NSBundle.mainBundle().pathForResource(forPlistNamed, ofType: "plist"){
@@ -27,7 +27,7 @@ func plistGet(key:String, forPlistNamed:String) -> NSString{
                 NSLog("NRSimplePlist - Error READING plist file '\(path)', error = '\(error)'")
             }
             
-            tipo = plist.valueForKey(key) as String
+            tipo = plist.valueForKey(key)!
             
             return tipo
             
@@ -40,14 +40,13 @@ func plistGet(key:String, forPlistNamed:String) -> NSString{
     return tipo
 }
 
-func plistSet(newValue:String, forKey:String, inPlistNamed:String){
+func plistSet(newValue:AnyObject, forKey:String, inPlistNamed:String){
     
     
     var error:NSError?
     var formats: UnsafeMutablePointer<NSPropertyListFormat> = UnsafeMutablePointer()
     
     var array:NSMutableDictionary = NSMutableDictionary()
-    var tipo:NSString = ""
     
     var fileManager : NSFileManager = NSFileManager.defaultManager()
     
@@ -67,7 +66,7 @@ func plistSet(newValue:String, forKey:String, inPlistNamed:String){
                 }
                 
                 array = plist.mutableCopy() as NSMutableDictionary
-
+                
                 array.setObject(newValue, forKey: forKey)
                 array.writeToFile(path, atomically: true)
             }
@@ -82,4 +81,3 @@ func plistSet(newValue:String, forKey:String, inPlistNamed:String){
     
     
 }
-
