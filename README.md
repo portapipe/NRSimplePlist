@@ -15,25 +15,34 @@ ENGLISH
 ## Usage
 
 ### Swift Version
-Get values (return NSString):
+Get values (return AnyObject):
 <pre>
 <code>
- plistGet(key:String, forPlistNamed:String) -> NSString
+ plistGet(key:String, forPlistNamed:String) -> AnyObject
 </code>
 </pre>
 
 Set value for key:
 <pre>
 <code>
- plistSet(newValue:String, forKey:String, inPlistNamed:String)
+ plistSet(newValue:AnyObject, forKey:String, inPlistNamed:String)
 </code>
 </pre>
+
+With Arrays and Dictionaries you have to set the var to a .mutableCopy() of it before setting it:
+<pre>
+<code>
+ var value = plistGet(...)
+ value = value.mutableCopy()
+</code>
+</pre>
+
 ---
 ### Example - Swift Version
 
 Fetching the name of background music from the 'settings.plist' file into the project:
 
-	var stringFromPlist : NSString = plistGet("settings", "backgroundMusic")
+	var stringFromPlist : NSString = plistGet("settings", "backgroundMusic") as NSString
 
 
 Editing the background music, saving the changes on the fly:
@@ -113,14 +122,22 @@ ITALIANO
 Ritorna il valore passando una chiave (ritorna NSString):
 <pre>
 <code>
- plistGet(key:String, forPlistNamed:String) -> NSString
+ plistGet(key:String, forPlistNamed:String) -> AnyObject
 </code>
 </pre>
 
 Setta un valore nel file per la chiave passata:
 <pre>
 <code>
- plistSet(newValue:String, forKey:String, inPlistNamed:String)
+ plistSet(newValue:AnyObject, forKey:String, inPlistNamed:String)
+</code>
+</pre>
+
+Con Array e Dictionary devi settare la variabile in una versione .mutableCopy() prima di poterli modificare:
+<pre>
+<code>
+ var value = plistGet(...)
+ value = value.mutableCopy()
 </code>
 </pre>
 ---
@@ -128,7 +145,7 @@ Setta un valore nel file per la chiave passata:
 
 Estraiamo il nome della musica di sottofondo dal file 'settaggi.plist' presente nel progetto:
 
-	var stringFromPlist : NSString = plistGet("settings", "backgroundMusic")
+	var stringFromPlist : NSString = plistGet("settings", "backgroundMusic") as NSString
 
 
 Modifichiamo ora la musica di sottofondo, salvando subito il cambiamento:
