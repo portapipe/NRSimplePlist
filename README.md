@@ -2,7 +2,7 @@ NRSimplePlist
 =============
 
 COCOAPODS
-<pre>pod 'NRSimplePlist'</pre>
+<pre>pod 'NRSimplePlist', :head</pre>
 
 ENGLISH
 =============
