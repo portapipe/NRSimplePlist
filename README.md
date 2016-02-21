@@ -7,7 +7,7 @@ COCOAPODS
 ENGLISH
 =============
 
-###Easy library to fetch and edit data from and to plists on the fly (XCode)
+###Easy library to fetch and edit data from and to plists on the fly (Xcode)
 
 
 ---
@@ -112,7 +112,7 @@ N.B. If you want to save sensible data DON'T USE PLISTS! Use CoreData instead or
 
 ITALIANO
 =============
-###Semplice libreria per recuperare dati da file plist e modificarli al volo (XCode)
+###Semplice libreria per recuperare dati da file plist e modificarli al volo (Xcode)
 
 
 ---
